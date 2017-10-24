@@ -20,10 +20,11 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    <button>Company</button>
+                    <a href="#">Company</a>
                     <a href="{{ url('add-products')}}">Products</a>
                     <a href="{{ url('work-order')}}">Work Order</a>
-                    <a href="{{ url('work-order-status')}}">Work Order Status</a>
+                    <a href="{{ url('add-workshop')}}">Add workshop</a>
+                    <a href="{{ url('work-order-status')}}">Order Status</a>
                 </div>
             </div>
         </div>
@@ -54,9 +55,11 @@
     </tbody>
   </table>
 </div> -->
+<hr>
 <div class="dropdown">
   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select Product
   <span class="caret"></span></button>
+
   <ul class="dropdown-menu">
    @foreach($product as $products)
     <li><a href="#">{{ $products->name }}</a></li>

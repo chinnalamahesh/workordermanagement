@@ -18,7 +18,17 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+<div class="flex-center position-ref full-height">
+            <div class="content">
+                <div class="title m-b-md">
+                    <a href="#">Company</a>
+                    <a href="{{ url('add-products')}}">Products</a>
+                    <a href="{{ url('work-order')}}">Work Order</a>
+                    <a href="{{ url('add-workshop')}}">Add workshop</a>
+                    <a href="{{ url('work-order-status')}}">Order Status</a>
+                </div>
+            </div>
+        </div>
 <div class="container">
 <div class="col-md-5">
     <div class="form-area">  

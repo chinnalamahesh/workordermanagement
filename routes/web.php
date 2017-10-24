@@ -16,6 +16,10 @@ Route::get('add-products','ProductController@getAddProduct');
 Route::post('add-products','ProductController@postAddProduct');
 Route::get('work-order','ProductController@getWorkOrder');
 Route::get('work-order/{id}','ProductController@getWorkOrderDetails');
-Route::post('work-order/{id}','ProductController@postAddWorkShop');
+Route::post('work-order/{id}','ProductController@postAddWorkOrder');
+Route::get('add-workshop','ProductController@getAddWorkshop');
+Route::post('add-workshop','ProductController@postAddWorkshop');
 Route::get('work-order-status','ProductController@getWorkOrderStatus');
+
+
 // Route::post('work-order/{id}','ProductController@postAddWorkShop');

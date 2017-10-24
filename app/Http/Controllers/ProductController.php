@@ -7,6 +7,7 @@ use Input;
 use App\Product;
 use App\Workorder;
 use Redirect;
+use App\Orderstatus;
 
 class ProductController extends Controller
 {
@@ -30,7 +31,8 @@ class ProductController extends Controller
             $product->price       = $request->get('price');
             $product->description = $request->get('description');
             $product->save();
-            return redirect()->back();
+            $url = url('home');
+            return Redirect::to($url)->with('success', 'Product has been added successfully');
 	}
 
 
@@ -47,7 +49,7 @@ class ProductController extends Controller
 		return view ('work-order-details', compact('product'));	
 	}
     		
-     public function postAddWorkShop(Request $request )
+     public function postAddWorkOrder(Request $request )
 	{
 			$workorder              			= new Workorder;
             $workorder->product_id  			= $request->get('product_id');
@@ -61,6 +63,28 @@ class ProductController extends Controller
             $workorder->total_cost             = $request->get('total_price');
             $workorder->save();
             $url = url('home');
-            return Redirect::to($url)->with('success', 'Announcement has been Updated successfully');
-	}       
+            return Redirect::to($url)->with('success', 'Workorder has been added successfully');
+	} 
+
+	public function getAddWorkshop()
+	      {
+	      	return view('add-workshop');
+	      } 
+
+	public function postAddWorkshop(Request $request)
+	      {
+	        $add              			= new Orderstatus;
+            $add->work_shop_number  			= $request->get('work_shop_number');
+            $add->workorders_pending           	= $request->get('workorders_pending');
+            $add->workorder_completed          	= $request->get('workorder_completed');
+            $add->save();
+            $url = url('home');
+            return Redirect::to($url)->with('success', 'Workshop has been Updated successfully');
+	       }
+	public function getWorkOrderStatus()
+	       {
+	       	$orderStatus = Orderstatus::all();
+	       	return view('work_order_status', compact('orderStatus') );
+	       }       
+
 }

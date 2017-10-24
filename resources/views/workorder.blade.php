@@ -20,10 +20,11 @@
         <div class="flex-center position-ref full-height">
             <div class="content">
                 <div class="title m-b-md">
-                    <button>Company</button>
+                    <a href="#">Company</a>
                     <a href="{{ url('add-products')}}">Products</a>
                     <a href="{{ url('work-order')}}">Work Order</a>
-                    <button>Order Status</button>
+                    <a href="{{ url('add-workshop')}}">Add workshop</a>
+                    <a href="{{ url('work-order-status')}}">Order Status</a>
                 </div>
             </div>
         </div>
